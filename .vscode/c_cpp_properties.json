@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "Master",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${env:USERPROFILE}/AppData/Local/node-gyp/Cache/15.5.0/include/node",
+        "${workspaceFolder}/node_modules/nan"
+      ]
+    }
+  ],
+  "version": 4
+}
