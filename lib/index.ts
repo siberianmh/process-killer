@@ -3,6 +3,5 @@ const nativeModule =
     ? require('../build/Release/processKiller.node')
     : null
 
-export const killProcessByName = (process: string) => {
-  return nativeModule.killProcessByName(process)
-}
+export const killProcessByName = (process: string) =>
+  nativeModule.killProcessByName(process)
