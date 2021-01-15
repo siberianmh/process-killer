@@ -57,7 +57,13 @@ NAN_METHOD(KillProcessByName)
 
   Nan::Utf8String subkeyArg(Nan::To<v8::String>(info[0]).ToLocalChecked());
   bool success = killProcessByName(std::string(*subkeyArg).c_str());
-  info.GetReturnValue().Set(success);
+  if (success != true)
+  {
+    Nan::ThrowError("Unexpected error while stopping the process.");
+    return;
+  }
+
+  info.GetReturnValue().SetNull();
 }
 
 NAN_MODULE_INIT(Init)

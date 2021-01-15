@@ -10,11 +10,12 @@ describe('processKiller', () => {
   test('closes processes', async () => {
     await execa('powershell.exe', ['Start-Process', 'notepad.exe'])
     const result = killProcessByName('notepad.exe')
-    expect(result).toBe(true)
+    expect(result).toBeNull()
   })
 
-  test('return false if process not runned', () => {
-    const result = killProcessByName('notepad.exe')
-    expect(result).toBe(false)
+  test('return error if process cannot be stopped', () => {
+    expect(() => {
+      killProcessByName('notepad.exe')
+    }).toThrowError('Unexpected error while stopping the process.')
   })
 })
