@@ -3,8 +3,10 @@ import * as execa from 'execa'
 
 describe('processKiller', () => {
   beforeEach(() => {
-    // ensure notepad doesn't laucnhed
-    killProcessByName('notepad.exe')
+    try {
+      // ensure notepad doesn't laucnhed
+      killProcessByName('notepad.exe')
+    } catch {}
   })
 
   test('closes processes', async () => {
