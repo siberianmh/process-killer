@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "nan": "^2.14.2",
-    "prebuild-install": "^6.0.0"
+    "prebuild-install": "^7.0.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.0",
